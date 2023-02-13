@@ -93,15 +93,3 @@ setnames(expression_sample, "rn", "ENSEMBL")
 
 write.xlsx(expression, file = here("out/expressions/expressions.xlsx"), asTable = TRUE)
 write.xlsx(expression_sample, file = here("out/expressions/expressions_sample.xlsx"), asTable = TRUE)
-
-pD <- melt(expression_sample, id.vars = c("ENSEMBL", "SYMBOL", "GENENAME"), variable.name = "id", value.name = "cpm")
-pD <- pD[metadata, on = "id"]
-pD[, Time:=str_sub(Timepoint, 3, -1) %>% as.integer]
-pD[, Timepoint:=factor(Timepoint, levels = c("ZT6", "ZT10", "ZT18", "ZT22"))]
-pD[, plotID:=str_sub(id, 1, -3)]
-pD[, logCPM:=log2(cpm)]
-tmp <- melt(expression, id.vars = c("ENSEMBL", "SYMBOL", "GENENAME"), variable.name = "id", value.name = "cpm")
-setkey(tmp, ENSEMBL, id)
-pD[, groupMean:=tmp[.(pD$ENSEMBL, pD$group), cpm]]
-pD[, logGroupMean:=log2(groupMean)]
-fwrite(pD, file = here("out/plotData.csv.gz"))
