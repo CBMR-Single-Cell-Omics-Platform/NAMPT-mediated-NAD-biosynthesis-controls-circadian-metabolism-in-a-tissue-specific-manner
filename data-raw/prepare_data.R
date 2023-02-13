@@ -1,4 +1,3 @@
-#library(org.Mm.eg.db)
 library(data.table)
 library(here)
 library(magrittr)
