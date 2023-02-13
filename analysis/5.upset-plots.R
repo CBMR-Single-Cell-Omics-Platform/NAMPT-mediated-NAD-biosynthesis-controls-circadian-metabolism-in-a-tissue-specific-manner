@@ -63,9 +63,9 @@ p <- upset(upsetPlotData,
 p
 
 cmToInches <- 0.393701
-png(here("out/upset-plot/upsetPlot.png"), width = 10.95*cmToInches, height = 6.55*cmToInches, units = "in", res = 300)
+png(here("out/upset-plot/2G.png"), width = 10.95*cmToInches, height = 6.55*cmToInches, units = "in", res = 300)
 p
 dev.off()
 
-graph2ppt(x = p, file = here("out/upset-plot/upsetPlot.pptx"))
+graph2ppt(x = p, file = here("out/upset-plot/2G.pptx"))
 # It is difficult to remove the underscore from the name. Do it in powerpoint instead

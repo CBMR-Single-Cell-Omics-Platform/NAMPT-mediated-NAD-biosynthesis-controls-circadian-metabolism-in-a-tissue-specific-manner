@@ -1,8 +1,8 @@
 library(eulerr)
 library(here)
 ### Figure 2
-# D
-png(filename = here("out/euler-diagrams/2D.png"), width = 15, height = 15, units = "cm", res = 300)
+# A
+png(filename = here("out/euler-diagrams/2A.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("eWAT" = 1295,
                             "BAT" = 2231,
                             "eWAT&BAT" = 590
@@ -15,8 +15,8 @@ fills = c("eWAT" = "#A0A0A4",
 ))
 dev.off()
 
-# E
-png(filename = here("out/euler-diagrams/2E.png"), width = 15, height = 15, units = "cm", res = 300)
+# B
+png(filename = here("out/euler-diagrams/2B.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("WT" = 2500,
                             "BAT" = 259,
                             "BAT&WT" = 321
@@ -29,8 +29,8 @@ fills = c("WT" = "#606060",
 ))
 dev.off()
 
-# F
-png(filename = here("out/euler-diagrams/2F.png"), width = 15, height = 15, units = "cm", res = 300)
+# C
+png(filename = here("out/euler-diagrams/2C.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("WT" = 1460,
                             "eWAT" = 954,
                             "eWAT&WT" = 425
@@ -63,8 +63,9 @@ fills = c("genotype" = "#A00000",
           "interaction" = "#FFA040"))
 dev.off()
 
-# F
-png(filename = here("out/euler-diagrams/3F.png"), width = 15, height = 15, units = "cm", res = 300)
+### Figure 4
+# A
+png(filename = here("out/euler-diagrams/4A.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("genotype" = 140,
                             "time" = 18,
                             "genotype&time" = 4
@@ -77,9 +78,9 @@ fills = c("genotype" = "#94641F",
 ))
 dev.off()
 
-### Figure 4
-# A
-png(filename = here("out/euler-diagrams/4A.png"), width = 15, height = 15, units = "cm", res = 300)
+
+# C
+png(filename = here("out/euler-diagrams/4C.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("genotype" = 229,
                             "time" = 72,
                             "HFD" = 114,
@@ -96,8 +97,8 @@ fills = c("genotype" = "#A00000",
           "HFD" = "#0F99B2"))
 dev.off()
 
-# E
-png(filename = here("out/euler-diagrams/4E.png"), width = 15, height = 15, units = "cm", res = 300)
+# G
+png(filename = here("out/euler-diagrams/4G.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(combinations = c("genotype" = 183,
                             "time" = 167,
                             "interaction" = 1,
@@ -114,7 +115,7 @@ fills = c("genotype" = "#A00000",
           "interaction" = "#FFA040"))
 dev.off()
 
-# F
-png(filename = here("out/euler-diagrams/4F.png"), width = 15, height = 15, units = "cm", res = 300)
+# H
+png(filename = here("out/euler-diagrams/4H.png"), width = 15, height = 15, units = "cm", res = 300)
 plot(euler(c("a" = 341)), legend = FALSE, labels = FALSE, edges = FALSE, fills = "#A00000")
 dev.off()

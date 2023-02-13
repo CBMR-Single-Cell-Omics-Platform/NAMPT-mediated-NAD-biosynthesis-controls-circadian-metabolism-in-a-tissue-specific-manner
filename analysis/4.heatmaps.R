@@ -130,11 +130,11 @@ coreClock <- forConversion[coreClockSymbol, ENSEMBL, on = "SYMBOL"]
 names(coreClock) <- coreClockSymbol
 
 cmToInches <- 0.393701
-png(here("out/heatmaps/2B.png"), height = 10.95*cmToInches, width = 6.55*cmToInches, units = "in", res = 300)
+png(here("out/heatmaps/S1L.png"), height = 10.95*cmToInches, width = 6.55*cmToInches, units = "in", res = 300)
 makeHeatmap(coreClock, value.var = "peak", show_rownames = TRUE, clusterRows = FALSE)
 dev.off()
 
-png(here("out/heatmaps/2A.png"), height = 10.95*cmToInches, width = 6.55*cmToInches, units = "in", res = 300)
+png(here("out/heatmaps/1N.png"), height = 10.95*cmToInches, width = 6.55*cmToInches, units = "in", res = 300)
 makeHeatmap(coreClock, value.var = "amplitude", show_rownames = TRUE, clusterRows = FALSE)
 dev.off()
 
@@ -142,10 +142,10 @@ dev.off()
 allGenes <- lapply(limorhydeEdgerResults[1:4], extract, FDR < 0.01, ENSEMBL) %>% Reduce(f = "union")
 names(allGenes) <- forConversion[allGenes, SYMBOL, on = "ENSEMBL"]
 
-png(here("out/heatmaps/2H.png"), width = 8*cmToInches, height = 8*cmToInches, units = "in", res = 300)
+png(here("out/heatmaps/2E.png"), width = 8*cmToInches, height = 8*cmToInches, units = "in", res = 300)
 makeHeatmap(allGenes, value.var = "peak")
 dev.off()
 
-png(here("out/heatmaps/2G.png"), height = 8*cmToInches, width = 8*cmToInches, units = "in", res = 300)
+png(here("out/heatmaps/2D.png"), height = 8*cmToInches, width = 8*cmToInches, units = "in", res = 300)
 makeHeatmap(allGenes, value.var = "amplitude")
 dev.off()
